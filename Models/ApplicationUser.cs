@@ -29,4 +29,11 @@ namespace E_commerce_web.Models
     {
 
     }
+
+    [Table("BaseUsers")]
+    public class BaseUser : ApplicationUser
+    {
+        public string Address { get; set; }
+    }
+
 }

@@ -4,14 +4,16 @@ using E_commerce_web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace E_commerce_web.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220319135252_addCategoryTable")]
+    partial class addCategoryTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -424,16 +426,6 @@ namespace E_commerce_web.Data.Migrations
                     b.ToTable("Admins");
                 });
 
-            modelBuilder.Entity("E_commerce_web.Models.BaseUser", b =>
-                {
-                    b.HasBaseType("E_commerce_web.Models.ApplicationUser");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.ToTable("BaseUsers");
-                });
-
             modelBuilder.Entity("E_commerce_web.Models.Seller", b =>
                 {
                     b.HasBaseType("E_commerce_web.Models.ApplicationUser");
@@ -562,15 +554,6 @@ namespace E_commerce_web.Data.Migrations
                     b.HasOne("E_commerce_web.Models.ApplicationUser", null)
                         .WithOne()
                         .HasForeignKey("E_commerce_web.Models.Admin", "Id")
-                        .OnDelete(DeleteBehavior.ClientCascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("E_commerce_web.Models.BaseUser", b =>
-                {
-                    b.HasOne("E_commerce_web.Models.ApplicationUser", null)
-                        .WithOne()
-                        .HasForeignKey("E_commerce_web.Models.BaseUser", "Id")
                         .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
                 });

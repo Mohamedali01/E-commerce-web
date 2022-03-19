@@ -20,6 +20,9 @@ namespace E_commerce_web.Data
         public DbSet<Admin> Admins { get; set; }
 
         public DbSet<Seller> Sellers { get; set; }
+
+
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

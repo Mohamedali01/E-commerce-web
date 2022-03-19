@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace E_commerce_web.Models
 {
+
     public class ApplicationUser : IdentityUser
     {
 

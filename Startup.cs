@@ -36,7 +36,7 @@ namespace E_commerce_web
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders()
-                .AddDefaultUI();
+                .AddDefaultUI();  
             services.AddControllersWithViews();
         }
 

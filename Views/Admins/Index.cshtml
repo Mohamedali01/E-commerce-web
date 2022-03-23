@@ -13,11 +13,9 @@
 </table>
 @section Scripts
 {
+    
+    
     <script>
-        $('#test').on('click',
-            function() {
-                alert('Ok');
-            });
 
         $('#new-table').DataTable({
             ajax: {
@@ -26,11 +24,9 @@
             },
             columns: [
                 {
-                    data: 'name',
-                    name:'Name'
+                    data: 'name'
                 },{
-                    data: 'name',
-                    name:'Name'
+                    data: 'name'
                 }
 
             ]

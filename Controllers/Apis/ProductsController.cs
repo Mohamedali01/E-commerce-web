@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using E_commerce_web.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace E_commerce_web.Controllers.Apis
 {
@@ -20,12 +21,11 @@ namespace E_commerce_web.Controllers.Apis
         }
 
         [HttpGet]
-        public ActionResult GetProducts()
+        public async Task<IActionResult> GetProducts()
         {
-            var products = _context.Products.ToList();
+            var products =await _context.Products.ToListAsync();
 
             return Ok(products);
-
         }
     }
 }

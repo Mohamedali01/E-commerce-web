@@ -21,10 +21,14 @@ namespace E_commerce_web.Models
 
         public string Content { get; set; }
 
+        /*
         [Required]
+        */
         public byte[] Image { get; set; }
 
+        /*
         [Required]
+        */
         public string SellerId { get; set; }
 
         public Seller Seller { get; set; }

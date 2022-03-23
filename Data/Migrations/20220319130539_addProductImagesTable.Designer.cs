@@ -4,14 +4,16 @@ using E_commerce_web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace E_commerce_web.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220319130539_addProductImagesTable")]
+    partial class addProductImagesTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -95,124 +97,6 @@ namespace E_commerce_web.Data.Migrations
                     b.ToTable("Users", "security");
                 });
 
-            modelBuilder.Entity("E_commerce_web.Models.Category", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<byte[]>("Image")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("Categories");
-                });
-
-            modelBuilder.Entity("E_commerce_web.Models.Offer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ExpireDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Type")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<double>("Value")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Offers");
-                });
-
-            modelBuilder.Entity("E_commerce_web.Models.Order", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ApplicationUserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<double>("TotalPrice")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApplicationUserId");
-
-                    b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("E_commerce_web.Models.OrderDetails", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrderId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("OrderDetails");
-                });
-
             modelBuilder.Entity("E_commerce_web.Models.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -238,9 +122,6 @@ namespace E_commerce_web.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("OfferId")
-                        .HasColumnType("int");
-
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
@@ -255,8 +136,6 @@ namespace E_commerce_web.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("OfferId");
 
                     b.HasIndex("SellerId");
 
@@ -424,16 +303,6 @@ namespace E_commerce_web.Data.Migrations
                     b.ToTable("Admins");
                 });
 
-            modelBuilder.Entity("E_commerce_web.Models.BaseUser", b =>
-                {
-                    b.HasBaseType("E_commerce_web.Models.ApplicationUser");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.ToTable("BaseUsers");
-                });
-
             modelBuilder.Entity("E_commerce_web.Models.Seller", b =>
                 {
                     b.HasBaseType("E_commerce_web.Models.ApplicationUser");
@@ -441,58 +310,13 @@ namespace E_commerce_web.Data.Migrations
                     b.ToTable("Sellers");
                 });
 
-            modelBuilder.Entity("E_commerce_web.Models.Category", b =>
-                {
-                    b.HasOne("E_commerce_web.Models.Category", "ParentCategory")
-                        .WithMany("ChildCategories")
-                        .HasForeignKey("CategoryId");
-
-                    b.Navigation("ParentCategory");
-                });
-
-            modelBuilder.Entity("E_commerce_web.Models.Order", b =>
-                {
-                    b.HasOne("E_commerce_web.Models.ApplicationUser", "ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("ApplicationUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ApplicationUser");
-                });
-
-            modelBuilder.Entity("E_commerce_web.Models.OrderDetails", b =>
-                {
-                    b.HasOne("E_commerce_web.Models.Order", "Order")
-                        .WithMany()
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("E_commerce_web.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Order");
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("E_commerce_web.Models.Product", b =>
                 {
-                    b.HasOne("E_commerce_web.Models.Offer", "Offer")
-                        .WithMany()
-                        .HasForeignKey("OfferId");
-
                     b.HasOne("E_commerce_web.Models.Seller", "Seller")
                         .WithMany()
                         .HasForeignKey("SellerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Offer");
 
                     b.Navigation("Seller");
                 });
@@ -566,15 +390,6 @@ namespace E_commerce_web.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("E_commerce_web.Models.BaseUser", b =>
-                {
-                    b.HasOne("E_commerce_web.Models.ApplicationUser", null)
-                        .WithOne()
-                        .HasForeignKey("E_commerce_web.Models.BaseUser", "Id")
-                        .OnDelete(DeleteBehavior.ClientCascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("E_commerce_web.Models.Seller", b =>
                 {
                     b.HasOne("E_commerce_web.Models.ApplicationUser", null)
@@ -582,11 +397,6 @@ namespace E_commerce_web.Data.Migrations
                         .HasForeignKey("E_commerce_web.Models.Seller", "Id")
                         .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("E_commerce_web.Models.Category", b =>
-                {
-                    b.Navigation("ChildCategories");
                 });
 
             modelBuilder.Entity("E_commerce_web.Models.Product", b =>

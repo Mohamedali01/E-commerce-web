@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace E_commerce_web.Controllers
 {
@@ -21,6 +22,7 @@ namespace E_commerce_web.Controllers
 
         public IActionResult Index()
         {
+
             return View();
         }
 

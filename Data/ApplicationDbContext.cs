@@ -21,6 +21,18 @@ namespace E_commerce_web.Data
 
         public DbSet<Seller> Sellers { get; set; }
 
+        public DbSet<BaseUser> BaseUsers { get; set; }
+
+        public DbSet<Product> Products { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<OrderDetails> OrderDetails { get; set; }
+
+        public DbSet<Offer> Offers { get; set; }
+
+        public DbSet<Category> Categories { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder builder)

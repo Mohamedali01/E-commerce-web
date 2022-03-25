@@ -15,8 +15,10 @@
             <table id="new-table" class="table table-striped table-bordered table-hover">
                 <thead>
                 <tr>
-                    <th class="center">Domain</th>
                     <th class="center">Name</th>
+                    <th class="center">Content</th>
+                    <th class="center">Rate</th>
+                    <th class="center">Price</th>
                 </tr>
                 </thead>
             </table>
@@ -32,15 +34,29 @@
     <script>
 
         $('#new-table').DataTable({
+            serverSide: true,
+            filter: true,
             ajax: {
                 url: '/api/products',
-                dataSrc: ''
+                method: 'POST',
+                dataSrc: 'data',
+                dataType: 'json'
             },
             columns: [
                 {
-                    data: 'name'
+                    data: 'name',
+                    name: 'Name'
                 }, {
-                    data: 'name'
+                    data: 'content',
+                    name: 'Content'
+                },
+                {
+                    data: 'rate',
+                    name: 'Rate'
+                },
+                {
+                    data: 'price',
+                    name: 'Price'
                 }
 
             ]

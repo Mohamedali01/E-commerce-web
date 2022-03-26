@@ -1,0 +1,131 @@
+﻿@{
+    ViewData["Title"] = "Sellers";
+}
+
+<div class="page-content">
+
+    <div class="page-header">
+        <h1>
+            Sellers 
+        </h1>
+    </div>
+    
+    <a asp-action="SellersForm" class="btn btn-primary" style="margin: 10px">Add Seller</a>
+    
+
+    <div class="row">
+        <div class="col-xs-12">
+            <table id="new-table" class="table table-striped table-bordered table-hover ">
+                <thead>
+                <tr>
+                    <th class="center">Id</th>
+                    <th class="center">Email</th>
+                    <th class="center">First Name</th>
+                    <th class="center">Last Name</th>
+                    <th class="center">Phone Number</th>
+                    <th class="center">Actions</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        </div><!-- /.row -->
+    </div><!-- /.page-content -->
+
+
+@section Scripts
+{
+
+    <script>
+
+        $(document).ready(function () {
+
+
+            /// DataTable
+            $('#new-table').DataTable({
+                serverSide: true,
+                filter: true,
+                ajax: {
+                    url: '/api/sellers',
+                    method: 'POST',
+                    dataSrc: 'data',
+                    dataType: 'json'
+                },
+                columnDefs: [
+                    {
+                        targets: [0],
+                        visible: false,
+                        searchable: false
+                    }
+                ],
+
+                columns: [
+                    {
+                        data: 'id',
+                        name: 'Id'
+                    },
+                    {
+                        data: 'email',
+                        name: 'Email'
+                    },
+                    {
+                        data: 'firstName',
+                        name: 'FirstName'
+                    }, {
+                        data: 'lastName',
+                        name: 'LastName'
+                    },
+                    {
+                        data: 'phoneNumber',
+                        name: 'PhoneNumber'
+                    },
+                    {
+                        render: function (data, type, row) {
+
+                            return "<div class='hidden-sm hidden-xs btn-group' style='display: flex;justify-content: space-between;'>" +
+                                "<span style='width:10px'></span>" +
+                                "<a href='/Sellers/SellersForm/"+row.id+"'class='btn btn-xs btn-info'><i class=' ace-icon fa fa-pencil bigger-175'></i></a>" +
+                                "<button data-id='" + row.id +"' class='btn btn-xs btn-danger js-delete'><i class='ace-icon fa fa-trash-o bigger-175'></i></button><span style = 'width:10px'></span></div>";
+                        },
+                        orderable: false
+
+                    }
+
+                ]
+            });
+
+
+
+
+            //Delete Button
+            $('#new-table').on('click',
+                '.js-delete',
+                function () {
+                    var button = $(this);
+                    var userId = button.attr('data-id');
+
+                    console.log(userId);
+
+                    var result = confirm("Are you sure you want to delete this user?");
+                    console.log(result);
+
+                    if (result) {
+                        $.ajax({
+                            url: "/api/sellers?id=" + userId,
+                            method: 'DELETE',
+                            success: function() {
+                                console.log("Done");
+                                button.parents('tr').fadeOut();
+                            },
+                            error: function () {
+                                console.log("error");
+                            }
+                        });
+                    }
+
+                });
+        });
+
+
+    </script>
+
+}

@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Admins";
+}
+
+<div class="page-content">
+
+    <div class="page-header">
+        <h1>
+            Products 
+        </h1>
+    </div><!-- /.page-header -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <table id="new-table" class="table table-striped table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th class="center">Id</th>
+                    <th class="center">Name</th>
+                    <th class="center">Content</th>
+                    <th class="center">Rate</th>
+                    <th class="center">Price</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        </div><!-- /.row -->
+    </div><!-- /.page-content -->
+
+
+@section Scripts
+{
+
+
+    <script>
+
+        $('#new-table').DataTable({
+            serverSide: true,
+            filter: true,
+            ajax: {
+                url: '/api/products',
+                method: 'POST',
+                dataSrc: 'data',
+                dataType: 'json'
+            },
+            columnDefs:[
+                {
+                    targets: [0],
+                    visible: false,
+                    searchable:false
+                }],
+            columns: [
+                {
+                    data: 'id',
+                    name: 'Id',
+                    autowidth:true
+                },
+                {
+                    data: 'name',
+                    name: 'Name',
+                    autowidth:true
+
+                }, {
+                    data: 'content',
+                    name: 'Content',
+                    autowidth:true
+
+                },
+                {
+                    data: 'rate',
+                    name: 'Rate',
+                    autowidth:true
+
+                },
+                {
+                    data: 'price',
+                    name: 'Price',
+                    autowidth:true
+
+                }
+
+            ]
+        });
+
+    </script>
+    
+
+
+
+}

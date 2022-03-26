@@ -53,6 +53,12 @@ namespace E_commerce_web
                 .AddDefaultTokenProviders()
                 .AddDefaultUI();
 
+            services.AddIdentityCore<BaseUser>()
+                .AddRoles<IdentityRole>()
+                .AddClaimsPrincipalFactory<UserClaimsPrincipalFactory<BaseUser, IdentityRole>>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders()
+                .AddDefaultUI();
 
             services.AddControllersWithViews();
 

@@ -11,7 +11,7 @@
     <!-- bootstrap & fontawesome -->
     <link rel="stylesheet" href="~/assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
-
+    <link href="~/assets/css/site.css" rel="stylesheet" />
     @*<link href="~/assets/lib/datatables/css/dataTables.bootstrap.css" rel="stylesheet" />
     <link href="~/assets/lib/datatables/css/dataTables.bootstrap4.css" rel="stylesheet" />
     <link href="~/assets/lib/datatables/css/dataTables.foundation.css" rel="stylesheet" />
@@ -127,9 +127,26 @@
 
 
                 <li class="">
-                    <a href="widgets.html">
+                    <a href="/admins">
                         <i class="menu-icon fa fa-users"></i>
                         <span class="menu-text"> Admins </span>
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <a href="/Sellers">
+                        <i class="menu-icon fa fa-users"></i>
+                        <span class="menu-text"> Sellers </span>
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="">
+                    <a href="/BaseUsers">
+                        <i class="menu-icon fa fa-users"></i>
+                        <span class="menu-text"> Users </span>
                     </a>
 
                     <b class="arrow"></b>
@@ -138,7 +155,7 @@
 
 
                 <li class="">
-                    <a href="gallery.html">
+                    <a href="/products">
                         <i class="menu-icon fa fa-picture-o"></i>
                         <span class="menu-text"> Products </span>
                     </a>
@@ -207,7 +224,6 @@
     <![endif]-->
 
     <script src="~/assets/jquery-3.6.0.min.js"></script>
-
     <script type="text/javascript">
         if ('ontouchstart' in document.documentElement) document.write("<script src='~/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
     </script>

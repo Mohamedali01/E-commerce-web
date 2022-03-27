@@ -1,0 +1,79 @@
+body {
+  background-color: #222;
+  color: #ccc;
+}
+/* remove defaults from responsive cols */
+
+.nopadding {
+  padding: 0 0 2px 14px;
+  margin: 0 !important;
+}
+
+.img-filter {
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+    -webkit-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+}
+
+.img-filter:hover {
+  filter: none; /* IE6-9 */
+  -webkit-filter: grayscale(0); /* Google Chrome, Safari 6+ & Opera 15+ */
+ 
+}
+
+.embed-responsive-16by9, .gallery-item .item{
+  position: relative;
+  text-align: center;
+  
+}
+
+.embed-responsive-16by9{
+  line-height: 132px;
+}
+
+.gallery-item .item{
+  line-height: 175px;
+  max-height: 156px;
+  overflow: hidden;
+  margin-bottom: 21px;
+}
+
+.gallery-item .overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(90, 90, 115, 0.7);
+  opacity:0;
+  -webkit-transition:all 0.25s ease-in-out;
+  transition:all 0.25s ease-in-out;
+}
+
+.gallery-item:hover .overlay{
+  opacity:1;
+  -webkit-transition:all 0.25s ease-in-out;
+  transition:all 0.25s ease-in-out;
+}
+
+
+
+.embed-responsive-16by9 .overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(90, 90, 115, 0.7);
+  opacity:0;
+  -webkit-transition:all 0.25s ease-in-out;
+  transition:all 0.25s ease-in-out;
+}
+
+.embed-responsive-16by9:hover .overlay{
+  opacity:1;
+  -webkit-transition:all 0.25s ease-in-out;
+  transition:all 0.25s ease-in-out;
+}

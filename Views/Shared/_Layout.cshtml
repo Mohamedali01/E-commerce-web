@@ -12,18 +12,13 @@
     <link rel="stylesheet" href="~/assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link href="~/assets/css/site.css" rel="stylesheet" />
-    @*<link href="~/assets/lib/datatables/css/dataTables.bootstrap.css" rel="stylesheet" />
-    <link href="~/assets/lib/datatables/css/dataTables.bootstrap4.css" rel="stylesheet" />
-    <link href="~/assets/lib/datatables/css/dataTables.foundation.css" rel="stylesheet" />
-    <link href="~/assets/lib/datatables/css/dataTables.jqueryui.css" rel="stylesheet" />
-    <link href="~/assets/lib/datatables/css/dataTables.material.css" rel="stylesheet" />
-    <link href="~/assets/lib/datatables/css/dataTables.semanticui.css" rel="stylesheet" />
-    <link href="~/assets/lib/datatables/css/dataTables.uikit.css" rel="stylesheet" />
-    <link href="~/assets/lib/datatables/css/jquery.dataTables.css" rel="stylesheet" />
-    <link href="~/assets/lib/datatables/css/jquery.dataTables_themeroller.css" rel="stylesheet" />*@
-    <!-- page specific plugin styles -->
-    <!-- text fonts -->
-    <!-- ace styles -->
+    <link rel="stylesheet" href="~/assets/css/jquery-ui.custom.min.css" />
+    <link rel="stylesheet" href="~/assets/css/chosen.min.css" />
+    <link rel="stylesheet" href="~/assets/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="~/assets/css/bootstrap-timepicker.min.css" />
+    <link rel="stylesheet" href="~/assets/css/daterangepicker.min.css" />
+    <link rel="stylesheet" href="~/assets/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="~/assets/css/bootstrap-colorpicker.min.css" />
     <link rel="stylesheet" href="~/assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
 
     <!--[if lte IE 9]>
@@ -31,6 +26,10 @@
     <![endif]-->
     <link rel="stylesheet" href="~/assets/css/ace-skins.min.css" />
     <link rel="stylesheet" href="~/assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="~/assets/css/main.css" />
+    <link rel="stylesheet" href="~/assets/css/media.css" />
+    <link rel="stylesheet" href="~/assets/css/jquery-ui.min.css" />
+
 
     <!--[if lte IE 9]>
       <link rel="stylesheet" href="~/assets/css/ace-ie.min.css" />
@@ -49,6 +48,13 @@
     <script src="~/assets/js/html5shiv.min.js"></script>
     <script src="~/assets/js/respond.min.js"></script>
     <![endif]-->
+
+    
+    <style>
+        td{
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body class="no-skin">
@@ -128,7 +134,7 @@
 
                 <li class="">
                     <a href="/admins">
-                        <i class="menu-icon fa fa-users"></i>
+                        <i class="menu-icon fa fa-user"></i>
                         <span class="menu-text"> Admins </span>
                     </a>
 
@@ -145,18 +151,25 @@
 
                 <li class="">
                     <a href="/BaseUsers">
-                        <i class="menu-icon fa fa-users"></i>
+                        <i class="menu-icon fa fa-user-circle"></i>
                         <span class="menu-text"> Users </span>
                     </a>
 
                     <b class="arrow"></b>
                 </li>
 
+                <li class="">
+                    <a asp-controller="Category" asp-action="Index">
+                        <i class="menu-icon fa fa-archive"></i>
+                        <span class="menu-text"> Categories </span>
+                    </a>
 
+                    <b class="arrow"></b>
+                </li>
 
                 <li class="">
                     <a href="/products">
-                        <i class="menu-icon fa fa-picture-o"></i>
+                        <i class="menu-icon fa fa-apple"></i>
                         <span class="menu-text"> Products </span>
                     </a>
 

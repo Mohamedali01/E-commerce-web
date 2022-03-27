@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+    .day-media {
+        margin: 10px;
+    }
+    .btn-admin-media {
+        margin: 10px;
+    }
+
+    .navbar-header{
+        float: right !important;
+    }
+
+    .navbar-buttons{
+        float: left !important;
+    }
+}
+

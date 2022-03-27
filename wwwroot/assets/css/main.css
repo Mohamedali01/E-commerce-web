@@ -1,0 +1,163 @@
+/*Rules*/
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+.empty{
+	padding: 10px;
+	font-weight:400;
+	text-align:center;
+	margin:20px auto 0;
+	color:#438eb9;width:50%;
+	border:1px solid #ccc;
+	border-radius:5px;
+	font-size:20px;
+	-webkit-box-shadow: 0px 0px 21px -2px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 21px -2px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 21px -2px rgba(0,0,0,0.75);
+}
+
+/**** Tables ****/
+.simple-table{
+	margin-top: 20px;
+}
+
+.simple-table th, .simple-table td{
+	text-align: center !important;
+}
+
+.custom-table{
+	background-color: #FFF;
+	margin-bottom: 0;
+	background-color: #EDF3F4;
+}
+
+.timeline-item .widget-box{
+	background-color: #FFF !important;
+	border-width: 0 3px 3px 3px;
+	border-style: solid;
+	border-color: #DAE1E5;
+}
+
+.custom-table th{width: 20%;border-width: 0 1px 0 0 !important;border-color: #FFF !important;border-style: solid !important;}
+.custom-table td{text-align: center;border: none !important;}
+.custom-table tr{border-top: 1px solid #F7FBFF;}
+.profile-user-info-striped{
+	margin: 20px 0 0 !important;
+	width: 100%;
+}
+.profile-info-name{
+	text-transform: capitalize;
+}
+/*.table-details{padding-left: 0;padding-right: 0;margin-top: 15px;}*/
+.table-details .profile-info-name{text-align: left;}
+/* Images */
+img, iframe{width: 100%;}
+
+.infobox{padding-top: 10px !important;}
+.infobox-data a, .infobox-data i{color: #e2dbdb}
+.infobox-data a:hover{text-decoration: none; color: #FFF}
+.infobox-data a:hover i{color: #FFF}
+.user-info {display: inline-block;padding-top: 7px;padding-left: 5px;font-size: 12px;}
+
+.control-icon a .edit{padding: 7px; color: #FFF; background-color: #2980b9 !important; margin-bottom: 2px;}
+.control-icon a .show{padding: 7px; color: #FFF; background-color: mediumseagreen !important; margin-bottom: 2px;}
+.control-icon a .approve{padding: 7px; color: #FFF; background-color: #2980b9 !important; margin-bottom: 2px;margin-right: 7px;}
+.control-icon a .reject{padding: 7px; color: #FFF; background-color: #c0392b  !important;margin-right: 7px;}
+.control-icon a .delete{padding: 7px; color: #FFF; background-color: #c0392b  !important;}
+.control-icon a i:hover{opacity: 0.5; cursor: pointer;}
+.btn-group-custom{
+	display: inline-flex !important;
+}
+.btn-group-custom .edit, .show {
+    /*
+	margin-right: 5px !important;
+    */
+}
+
+.flag{width : 23px; height: 17px}
+
+.flash-msg{text-align: center;position: fixed;z-index: 10000; right: 40%; background-color: #2ecc71; color: #FFF;padding: 10px; top: 50px;}
+.flash-error{background-color: #e74c3c !important}
+#flash-msg{display: none;}
+
+.content-title a{width: 400px!important;text-align: center!important;}
+
+
+/* Nav-bar */
+.navbar-brand{
+	padding: 12px !important;
+ /*   width: 100px;*/
+    color: #FFF !important;
+    height: 38px !important;
+    margin-left: 5px;
+}
+.navbar-brand>img{
+	width: 100%;
+	height: 100%;
+}
+
+.nav .open>a, .nav a:hover, .nav .open>a:hover, .nav .open>a:focus{color: #333!important}
+
+.modal-dialog form{
+	display: inline;
+}
+
+.col-md-1{
+	text-align: right;
+}
+.disabled {
+	pointer-events: none;
+	cursor: not-allowed;
+	opacity: 0.6;
+
+}
+
+.flatpickr-month{height: 50px !important;}
+
+.flatpickr-current-month .numInputWrapper{
+	width: 7ch !important;
+}
+
+.position-relative{
+	position: relative;
+}
+
+.show-password{
+	position: absolute;
+	top: 13px;
+	left: 20px;
+	color: #AAA;
+}
+
+.show-password:hover{
+	color: #333;
+	cursor: pointer;
+}
+
+.location{
+	padding: 20px;
+}
+
+#map{
+	height: 400px;
+	width: 100%;
+}
+
+.header{
+	padding-top: 30px;
+}
+
+
+.login-form{
+	margin-top: 10%;
+	background-color: rgba(213, 214, 224, 0.5);
+	padding: 15px;
+}
+
+
+
+.login-form h1{
+	margin-bottom: 30px;
+}
+
+.login-form input{
+	margin-bottom: 10px;
+}

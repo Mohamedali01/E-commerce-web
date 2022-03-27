@@ -1,0 +1,91 @@
+.page-header{
+    margin-bottom: 10px;
+}
+.panel-heading{
+    padding: 1px 15px;
+}
+.form form .error{
+    color: #F00;
+}
+.redborder{
+    border: 1px solid #B16159 !important;
+}
+form{
+    padding:20px;
+}
+input, textarea{
+    padding:10px 15px !important;margin-bottom: 7px;
+}
+.has-float-label{
+    position:relative;
+}
+.has-float-label label .astric{
+    color:#ff0000;opacity:1;
+}
+
+
+.help-block {
+    display: block;
+    margin-top: 21px;
+    margin-bottom: 10px;
+    color: #b33f3f;
+    font-style: italic;
+}
+.has-float-label label{
+    background:#fff;
+    position:absolute;
+    cursor:text;
+    font-size:15px!important;
+    opacity:1;
+    -webkit-transition:all .2s;
+    transition:all .2s;
+    top:-.55em;
+    left:15px;
+    z-index:3;
+    line-height:1;
+    padding:0 1px;
+    color:#3097d1;
+}
+.has-float-label label::after{
+    content:" ";
+    display:block;
+    position:absolute;
+    background:white;
+    height:2px;
+    top:50%;
+    left:-.2em;
+    right:-.2em;
+    z-index:-1;
+}
+.has-float-label .form-control::-webkit-input-placeholder{opacity:1;-webkit-transition:all .2s;transition:all .2s;}
+.has-float-label .form-control:placeholder-shown:not(:focus)::-webkit-input-placeholder{opacity:0;}
+.has-float-label .form-control:placeholder-shown:not(:focus) + label{font-size:150%;opacity:.5;top:.4em;color:#8a8888;}
+.has-float-label .form-control:placeholder-shown:not(:focus) + label .astric{opacity:0;}
+.form-group{margin-bottom: 15px !important;}
+input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,input:-webkit-autofill:active{transition:background-color 5000s ease-in-out 0s;}
+input:focus,input:hover,input:visited,input:active{border-color:#3097d1 !important;}
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder{color:transparent;}
+input:focus:-moz-placeholder, textarea:focus:-moz-placeholder{color:transparent;}
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder{color:transparent;}
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder{color:transparent;}
+
+input,textarea,select{border-radius:3px!important;}
+select:hover,select:focus{border-color:#3097d1 !important;}
+form input, form select{height: 40px!important;}
+.btn{height: auto!important;}
+.btn-xs{padding: 6px !important}
+select{font-size: 13px!important;padding-left: 10px!important;}
+.edit-country-img{
+    padding-top: 5px;
+}
+.edit-country-img img{width: 30px; height: 30px;border:1px solid #EEE;}
+input.timepicki-input{padding: 0 !important;}
+
+/* style location picker */
+.pac-container .pac-item{
+    text-align: right;
+}
+
+.dataTables_wrapper input[type=search], .dataTables_wrapper input[type=text], .dataTables_wrapper select{
+    padding: 0 !important;
+}

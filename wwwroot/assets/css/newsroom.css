@@ -1,0 +1,10 @@
+.speakers{
+	background-color: #FFF !important;
+	padding: 25px 0 15px;
+	overflow: hidden;
+}
+
+.speakers  .speaker-name:hover{
+  cursor: pointer; color: #AAA
+}
+

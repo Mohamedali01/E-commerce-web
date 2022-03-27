@@ -1,0 +1,15 @@
+.select2-container--default .select2-search--inline .select2-search__field{
+    text-align: right;
+}
+
+.select2-results__options{
+    margin: 0 !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered li{
+    float: right !important;
+}
+
+.select2-results__option[aria-selected]{
+    text-align: right !important;
+}

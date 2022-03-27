@@ -1,0 +1,28 @@
+/*================================================================================
+	Item Name: Frest HTML Admin Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+@import url('https://fonts.googleapis.com/css?family=Cairo&subset=arabic,latin-ext');
+
+a, h1, h2, h3, h4, h5, h6, li, strong, p, div, section ,th ,td{
+    font-family: "Cairo", serif !important;
+}
+.has-float-label label{
+    right :15px;
+    left: auto;
+}
+table.dataTable thead>tr>th.sorting{
+    padding-right :40px;
+}
+.table thead th{
+    letter-spacing: 0;
+    font-size: 1rem;
+
+}

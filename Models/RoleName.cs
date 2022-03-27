@@ -7,9 +7,9 @@ namespace E_commerce_web.Models
 {
     public static class RoleName
     {
-        public static string Admin = "Admin";
-        public static string Seller = "Seller";
-        public static string User = "User";
+        public const string Admin = "Admin";
+        public const string Seller = "Seller";
+        public const string User = "User";
 
     }
 }

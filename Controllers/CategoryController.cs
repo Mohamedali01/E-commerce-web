@@ -8,6 +8,7 @@ using E_commerce_web.Data;
 using E_commerce_web.Models;
 using E_commerce_web.ViewModels;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 
 namespace E_commerce_web.Controllers
 {
@@ -27,8 +28,9 @@ namespace E_commerce_web.Controllers
             return View();
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            ViewBag.Categories = await _context.Categories.ToListAsync();
             return View();
         }
 
@@ -40,10 +42,25 @@ namespace E_commerce_web.Controllers
                 return View("Create");
 
 
+            var extensions = new List<string> { ".jpg", ".png" };
+
+            if (!extensions.Contains(Path.GetExtension(model.Image.FileName).ToLower()))
+            {
+                ModelState.AddModelError("Poster", "Image extension is not acceptable");
+                 return View("Create");
+            }
+
+            if (model.Image.Length > 1048576 * 2)
+            {
+                ModelState.AddModelError("Poster", "Image size can't be bigger than 2 MB");
+                 return View("Create");
+            }
+
             string uniqueFileName = ProcessUploadedFile(model);
             var row = new Category
             {
                 Name = model.Name,
+                CategoryId = model.CategoryId,
                 Image = uniqueFileName
             };
 

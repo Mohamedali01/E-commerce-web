@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using E_commerce_web.Models;
+using System.Text.Json.Serialization; 
 
 namespace E_commerce_web
 {
@@ -61,6 +62,9 @@ namespace E_commerce_web
                 .AddDefaultUI();
 
             services.AddControllersWithViews();
+
+            services.AddControllers().AddJsonOptions(x =>
+   x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
         }
 

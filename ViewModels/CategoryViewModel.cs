@@ -15,6 +15,8 @@ namespace E_commerce_web.ViewModels
         [Required]
         public string Name { get; set; }
 
+
+        [Required]
         public IFormFile Image { get; set; }
 
         public int? CategoryId { get; set; }

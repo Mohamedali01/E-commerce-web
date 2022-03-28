@@ -4,7 +4,7 @@
 }
 
 <div class="page-content">
-
+   
     <div class="page-header">
         <div class="row">
             <div class="col-md-12">
@@ -22,19 +22,33 @@
                             <div class="form-group">
                                 <label for="Name" class="col-sm-3">Category Name</label>
                                 <div class="col-sm-9">
-                                    <input id="Name" type="text" placeholder="Name" name="Name" class="form-control"/>
+                                    <input id="Name" type="text" placeholder="Name" name="Name" class="form-control" />
                                     <span asp-validation-for="Name"></span>
                                 </div>
                             </div>
                             <div class="form-group col-md-12 has-float-label input-group">
                                 <label for="Image" class="col-sm-3">Image</label>
                                 <div class="col-sm-9">
-                                    <input id="Image" type="file" placeholder="Image" name="Image" class="form-control"/>
+                                    <input id="Image" type="file" placeholder="Image" name="Image" class="form-control" />
                                     <span asp-validation-for="Image"></span>
-                                 </div>
                                 </div>
-                                <input type="submit" class="btn-primary btn-xs btn-block">
                             </div>
+
+                            <div class="form-group col-md-12 has-float-label input-group">
+                                <label for="CategoryId" class="col-sm-3">Parent Category</label>
+                                <div class="col-sm-9">
+                                    <select class="form-group" asp-for="CategoryId">
+                                        <option >Parent Category</option>
+                                        @foreach (var i in (ViewBag.Categories))
+                                        {
+                                            <option value="@i.Id"> @i.Name</option>
+                                        }
+                                    </select>
+                                    <span asp-validation-for="CategoryId"></span>
+                                </div>
+                            </div>
+                            <input type="submit" class="btn-primary btn-xs btn-block">
+                        </div>
                     </form>
                 </div>
             </div>
